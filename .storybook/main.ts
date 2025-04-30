@@ -12,6 +12,10 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  viteFinal: async (config) => {
+    config.base = '/leviathan-ui/';
+    return config;
+  },
 };
 export default config;
