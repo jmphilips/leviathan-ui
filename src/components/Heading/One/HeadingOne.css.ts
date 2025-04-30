@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { typography } from '../../../styles/typography.css';
+import { typography } from '../../../styles/tokens/typography.css';
 
 export const headingOne = style({
     fontFamily: typography.fontFamily.serif,
