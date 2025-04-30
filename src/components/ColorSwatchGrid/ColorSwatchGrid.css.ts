@@ -10,8 +10,8 @@ export const grid = style({
 export const swatch = style({
   borderRadius: radiiVars.radius.md,
   overflow: 'hidden',
-  border: `1px solid ${colorVars.color.textMuted}`,
-  background: colorVars.color.background,
+  border: `1px solid ${colorVars.palette.textMuted[300]}`,
+  background: colorVars.palette.background[100],
 });
 
 export const preview = style({
@@ -22,5 +22,5 @@ export const preview = style({
 export const label = style({
   padding: spacingVars.spacing.sm,
   fontSize: '0.875rem',
-  color: colorVars.color.text,
+  color: colorVars.palette.text[900],
 });

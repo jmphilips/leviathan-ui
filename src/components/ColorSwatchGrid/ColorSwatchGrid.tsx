@@ -11,7 +11,6 @@ const ColorSwatch = ({ name, value }: ColorSwatchProps) => (
     <div className={styles.preview} style={{ backgroundColor: value }} />
     <div className={styles.label}>
       <strong>{name}</strong>
-      <code>{value}</code>
     </div>
   </div>
 );
