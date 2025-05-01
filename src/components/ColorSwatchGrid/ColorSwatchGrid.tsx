@@ -6,6 +6,14 @@ type ColorSwatchProps = {
     value: string;
 };
 
+type ColorSwatchGridProps = {
+    colors: {
+        [group: string]: {
+            [shade: string]: string;
+        };
+    };
+};
+
 const ColorSwatch = ({ name, value }: ColorSwatchProps) => (
     <div className={styles.swatch}>
         <div className={styles.preview} style={{ backgroundColor: value }} />
@@ -15,10 +23,28 @@ const ColorSwatch = ({ name, value }: ColorSwatchProps) => (
     </div>
 );
 
-export const ColorSwatchGrid = ({ colors }: { colors: Record<string, string> }) => (
+export const ColorSwatchRow = ({
+  groupName,
+  colors,
+}: {
+  groupName: string;
+  colors: Record<string, string>;
+}) => (
+  <div className={styles.rowWrapper}>
+    <div className={styles.rowHeading}>{groupName}</div>
+    <div className={styles.row}>
+      {Object.entries(colors).map(([shade, value]) => (
+        <ColorSwatch key={`${groupName}-${shade}`} name={`${shade}`} value={value} />
+      ))}
+    </div>
+  </div>
+);
+
+
+export const ColorSwatchGrid = ({ colors }: ColorSwatchGridProps) => (
     <div className={styles.grid}>
-        {Object.entries(colors).map(([name, value]) => (
-            <ColorSwatch key={name} name={name} value={value} />
+        {Object.entries(colors).map(([groupName, shades]) => (
+            <ColorSwatchRow key={groupName} groupName={groupName} colors={shades} />
         ))}
     </div>
 );

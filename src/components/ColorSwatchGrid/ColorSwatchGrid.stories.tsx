@@ -11,18 +11,8 @@ export default meta;
 
 type Story = StoryObj<typeof ColorSwatchGrid>;
 
-function flattenPalette(palette: typeof colorVars.palette) {
-    const flat: Record<string, string> = {};
-    for (const [base, shades] of Object.entries(palette)) {
-        for (const [step, hex] of Object.entries(shades)) {
-            flat[`${base}-${step}`] = hex;
-        }
-    }
-    return flat;
-}
-
 export const AllColorShades: Story = {
     args: {
-        colors: flattenPalette(colorVars.palette),
+        colors: colorVars.palette,
     },
 };

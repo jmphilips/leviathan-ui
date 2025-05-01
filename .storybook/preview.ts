@@ -1,8 +1,6 @@
 import type { Preview } from '@storybook/react'
 
-import '@fontsource/libre-franklin/400.css';
-import '@fontsource/libre-franklin/700.css';
-import '@fontsource/im-fell-english';
+import '../src/styles/fonts.css.ts'; // or inline fontsource imports here
 
 const preview: Preview = {
   parameters: {

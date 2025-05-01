@@ -57,7 +57,9 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
+    "@fontsource/dm-serif-display": "^5.2.5",
     "@fontsource/im-fell-english": "^5.2.5",
+    "@fontsource/inter": "^5.2.5",
     "@fontsource/libre-franklin": "^5.2.5"
   }
 }
